@@ -11,13 +11,21 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>8.1.5.v20120716</version>
-				<configuration>
-					<scanIntervalSeconds>0</scanIntervalSeconds>
-				</configuration>
-			</plugin>
+                            <groupId>com.microsoft.azure</groupId>
+                            <artifactId>azure-webapp-maven-plugin</artifactId>
+                            <version>1.4.0</version>
+                            <configuration>
+
+                                <!-- Web App information -->
+                                <resourceGroup>JENKINS</resourceGroup>
+                                <appName>JavaWebappTool</appName>
+                                <region>Central US</region>
+
+                                <!-- Java Runtime Stack for Web App on Linux-->
+                                <linuxRuntime>tomcat 8.5-jre8</linuxRuntime>
+
+                            </configuration>
+                        </plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
